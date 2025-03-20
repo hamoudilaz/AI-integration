@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypta AI Meme Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <h1>Wave AI</h1>
+        <label for="memePrompt">Prompt</label>
+        <input type="text" id="memePrompt" placeholder="Enter your idea..." />
+        <button class="btn" onclick="generateMeme()"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate</button>
+        <progress id="progressBar" value="0" max="100" style="width: 70%; display: none"></progress>
+        <p id="progressPercentage" style="display: none">0%</p>
+        <div class="meme-container">
+          <img id="generatedMeme" src="" alt="Generated image will appear here!" style="display: none" />
+        </div>
+        <button onclick="copyImageToClipboard()">Copy Image</button>
+      </div>
+
+      <div class="container">
+        <h2>Generate Sound Effect</h2>
+        <input type="text" id="ttsInput" placeholder="Enter a sound effect like 'car revving'" />
+        <button class="btn" onclick="generateSoundEffect()"><i class="fa-solid fa-volume-up"></i> Generate</button>
+
+        <div id="audioContainer" style="display: none; margin-top: 20px">
+          <audio id="soundPlayer">
+            <source id="soundSource" src="" type="audio/mpeg" />
+            Your browser does not support the audio tag.
+          </audio>
+
+          <div id="audioControls">
+            <button id="playButton" onclick="toggleAudio()">▶️</button>
+            <span id="timeDisplay">0:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2>Random Joke Generator</h2>
+        <button class="btn" onclick="fetchJoke()"><i class="fa-solid fa-laugh"></i>Generate</button>
+        <p id="jokeDisplay"></p>
+      </div>
+
+      <div class="container">
+        <h2>Motivational Quote Generator</h2>
+        <button class="btn" onclick="generateQuote()"><i class="fa-solid fa-quote-left"></i>Generate</button>
+        <p id="quoteDisplay"></p>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Powered by Wave AI -
+        <a href="https://explorer.solana.com/address/YOUR_TOKEN_CA" target="_blank">View Token</a>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
